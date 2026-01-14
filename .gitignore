@@ -90,3 +90,9 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Ruff
+.ruff_cache/
+
+# pyproject.toml local overrides
+pyproject.local.toml

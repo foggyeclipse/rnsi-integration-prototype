@@ -1,12 +1,15 @@
-import psycopg2
-from psycopg2.extras import Json
-from app.config import settings
 import logging
+
+import psycopg2
+import psycopg2.extensions
+from psycopg2.extras import Json
+
+from app.config import settings
 
 logger = logging.getLogger(__name__)
 
 
-def get_db_connection():
+def get_db_connection() -> psycopg2.extensions.connection:
     """Return new PostgreSQL connection with autocommit disabled."""
     try:
         conn = psycopg2.connect(

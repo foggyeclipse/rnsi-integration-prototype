@@ -1,5 +1,7 @@
-import requests
 import logging
+
+import requests
+
 from app.config import settings
 
 logger = logging.getLogger(__name__)
@@ -55,5 +57,7 @@ def download_dictionary(identifier: str) -> list[dict]:
             logger.error("Unexpected error for %s (page %d): %s", identifier, page, e)
             raise
 
-    logger.info("Download complete: %s — %d records total", identifier, len(all_records))
+    logger.info(
+        "Download complete: %s — %d records total", identifier, len(all_records)
+    )
     return all_records
